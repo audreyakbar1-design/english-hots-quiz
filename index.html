@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English HOTS Challenge — Kelas 2 SD</title>
+<meta name="description" content="30 soal Bahasa Inggris HOTS Level Nasional untuk kelas 2 SD">
+<style>
+  :root{
+    --primary:#6d28d9; --primary-dark:#5b21b6; --accent:#f59e0b;
+    --ok:#16a34a; --bad:#dc2626; --card:#ffffff; --ink:#1f2937; --muted:#6b7280;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Comic Sans MS','Segoe UI',system-ui,sans-serif;
+    color:var(--ink); min-height:100vh; padding:16px;
+    background:linear-gradient(135deg,#ede9fe,#dbeafe 50%,#fce7f3);
+  }
+  .wrap{max-width:760px;margin:0 auto}
+  header{text-align:center;margin-bottom:16px}
+  header h1{font-size:clamp(1.4rem,5vw,2.1rem);color:var(--primary)}
+  header p{color:var(--muted);font-size:.95rem}
+  .chip{display:inline-block;background:var(--accent);color:#7c2d12;font-weight:bold;
+    border-radius:999px;padding:4px 14px;font-size:.85rem;margin-top:8px}
+  .card{background:var(--card);border-radius:20px;padding:22px;
+    box-shadow:0 8px 24px rgba(76,29,149,.12);margin-bottom:14px}
+  .btn{display:block;width:100%;border:none;cursor:pointer;font-family:inherit;
+    font-size:1.05rem;border-radius:14px;padding:15px 18px;margin-top:10px;
+    background:var(--primary);color:#fff;font-weight:bold;transition:transform .1s}
+  .btn:active{transform:scale(.98)}
+  .btn:disabled{background:#c4b5fd;cursor:not-allowed}
+  .btn.secondary{background:#ede9fe;color:var(--primary)}
+  ul.rules{margin:12px 0 4px 22px;line-height:1.9;font-size:1rem}
+  label.small{display:block;margin-top:14px;font-weight:bold;color:var(--primary)}
+  input.name{width:100%;margin-top:6px;padding:13px 14px;border:2px solid #ddd6fe;
+    border-radius:12px;font-family:inherit;font-size:1rem}
+  .bar{height:12px;background:#ede9fe;border-radius:999px;overflow:hidden}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));
+    transition:width .3s;border-radius:999px}
+  .meta{display:flex;justify-content:space-between;align-items:center;
+    font-size:.9rem;color:var(--muted);margin-bottom:8px;gap:8px}
+  .lv{background:#ede9fe;color:var(--primary);border-radius:999px;padding:3px 10px;font-weight:bold}
+  .qtext{font-size:1.25rem;line-height:1.55;margin:14px 0 6px;font-weight:bold}
+  .qsub{background:#f8fafc;border:2px dashed #c4b5fd;border-radius:12px;
+    padding:12px;margin-top:10px;font-size:1rem;line-height:1.7;white-space:pre-line}
+  .vis{text-align:center;font-size:2.4rem;letter-spacing:.3em;margin:8px 0}
+  .opt{display:block;width:100%;text-align:left;background:#f5f3ff;border:2px solid #ddd6fe;
+    border-radius:14px;padding:14px 16px;margin-top:10px;font-family:inherit;font-size:1.05rem;
+    cursor:pointer;line-height:1.4;transition:background .15s}
+  .opt:hover{background:#ede9fe}
+  .opt .k{display:inline-block;width:26px;font-weight:bold;color:var(--primary)}
+  .opt.sel{background:var(--primary);color:#fff;border-color:var(--primary-dark)}
+  .opt.sel .k{color:#fde68a}
+  .scorebox{text-align:center}
+  .circle{width:130px;height:130px;border-radius:50%;margin:10px auto;
+    display:flex;flex-direction:column;justify-content:center;
+    background:conic-gradient(var(--ok) calc(var(--p)*1%),#ede9fe 0)}
+  .circle .in{background:#fff;width:104px;height:104px;border-radius:50%;margin:13px auto;
+    display:flex;flex-direction:column;justify-content:center}
+  .circle b{font-size:2rem;color:var(--primary)}
+  .circle span{font-size:.8rem;color:var(--muted)}
+  .badge{font-size:1.3rem;font-weight:bold;color:var(--accent);margin-top:6px}
+  .rev{border-top:2px solid #f3f4f6;padding:14px 0;font-size:.98rem}
+  .rev .st{font-weight:bold;border-radius:8px;padding:2px 8px;font-size:.85rem}
+  .st.good{background:#dcfce7;color:var(--ok)}
+  .st.wrong{background:#fee2e2;color:var(--bad)}
+  .rev .qq{margin:8px 0 4px;font-weight:bold}
+  .rev .ans{line-height:1.7}
+  .rev .exp{background:#fffbeb;border-left:4px solid var(--accent);
+    padding:8px 10px;margin-top:8px;border-radius:0 8px 8px 0;font-size:.92rem}
+  .hide{display:none}
+  footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:18px}
+  @media print{
+    body{background:#fff;padding:0}.noprint{display:none!important}
+    .card{box-shadow:none;border:1px solid #ddd}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🌟 English HOTS Challenge 🌟</h1>
+    <p>Bahasa Inggris · 30 Soal · Tingkat Nasional</p>
+    <span class="chip">Kelas 2 SD · Level HOTS (C4–C6)</span>
+  </header>
+
+  <!-- MULAI -->
+  <section id="start" class="card">
+    <p style="line-height:1.8">
+      Halo, Bintang! 👋 Ini 30 soal Bahasa Inggris berpikir tingkat tinggi (HOTS).
+      Baca teks dan petunjuk dengan cermat, lalu pilih jawaban terbaik.
+    </p>
+    <ul class="rules">
+      <li>30 soal pilihan ganda (A–D)</li>
+      <li>Satu jawaban terbaik tiap soal</li>
+      <li>Jawaban terkunci begitu kamu memilih</li>
+      <li>Di akhir, kamu dapat nilai + pembahasan tiap soal</li>
+    </ul>
+    <label class="small" for="nm">Namamu (opsional, tampil di hasil) ✏️</label>
+    <input class="name" id="nm" type="text" maxlength="30" placeholder="Contoh: Aisyah">
+    <button class="btn" id="go">🚀 Mulai Kerjakan!</button>
+  </section>
+
+  <!-- SOAL -->
+  <section id="quiz" class="hide">
+    <div class="card">
+      <div class="meta">
+        <span id="cnt">Soal 1 / 30</span>
+        <span class="lv" id="lv">🔍 Analisis</span>
+      </div>
+      <div class="bar"><i id="fill" style="width:0%"></i></div>
+      <div class="vis" id="vis" aria-hidden="true"></div>
+      <div class="qtext" id="qtext" role="region" aria-live="polite"></div>
+      <div class="qsub hide" id="qsub"></div>
+      <div id="opts"></div>
+    </div>
+    <button class="btn" id="next" disabled>Soal Berikutnya ➜</button>
+    <button class="btn secondary noprint" id="quit">⏱️ Selesai &amp; Lihat Nilai</button>
+  </section>
+
+  <!-- HASIL -->
+  <section id="res" class="hide">
+    <div class="card scorebox">
+      <div id="who" style="font-weight:bold;font-size:1.1rem"></div>
+      <div class="circle" id="circ" style="--p:0">
+        <div class="in"><b id="sc">0</b><span>dari 30</span></div>
+      </div>
+      <div class="badge" id="bdg"></div>
+      <p id="msg" style="margin-top:8px;line-height:1.7"></p>
+      <button class="btn" id="again">🔁 Kerjakan Ulang</button>
+      <button class="btn secondary noprint" id="printBtn">🖨️ Cetak Pembahasan</button>
+    </div>
+    <div class="card" id="revbox"></div>
+  </section>
+
+  <footer>Dibuat untuk pembelajaran Bahasa Inggris SD · HOTS: C4 Analisis · C5 Evaluasi · C6 Kreasi</footer>
+</div>
+
+<script>
+// ponytail: tanpa timer/shuffle/simpan-otomatis — tambah localStorage kalau perlu lanjut nanti
+const DATA=[
+{lv:"C4",vis:"🐦",q:"I have two legs, but I cannot walk. I have two wings, and I can sing. I often live in a cage. What am I?",
+ o:["A fish","A bird","A dog","A snake"],a:1,
+ e:"Petunjuknya: dua sayap, bisa bernyanyi (sing), dan hidup di sangkar = burung (bird)."},
+{lv:"C4",vis:"🌸",q:"Which word does NOT belong to the group?",
+ o:["Rose","Jasmine","Sunflower","Chair"],a:3,
+ e:"Rose, jasmine, dan sunflower semuanya bunga. Chair (kursi) bukan tanaman."},
+{lv:"C4",vis:"🐦 ➜ 🌊",q:"A bird flies in the sky. By the same rule, a fish swims in the _____.",
+ o:["tree","water","box","road"],a:1,
+ e:"Hubungan analogi: makhluk hidup dan tempat tinggalnya. Bird → sky, fish → water."},
+{lv:"C4",vis:"🌱",q:"Put the sentences in the right order to make a good story.\n1. The seed grows into a small plant.\n2. The farmer puts a seed into the soil.\n3. The farmer picks the red fruit.\n4. The farmer waters the plant every day.",
+ o:["2 – 1 – 4 – 3","1 – 2 – 3 – 4","2 – 4 – 3 – 1","4 – 2 – 1 – 3"],a:0,
+ e:"Urutan logisnya: benih ditanam (2) → tumbuh (1) → disiram (4) → dipanen (3)."},
+{lv:"C4",vis:"☔",q:"Rani takes an umbrella and wears her raincoat before going to school. Why?",
+ o:["Because it is raining.","Because she is hungry.","Because she is late.","Because it is very hot."],a:0,
+ e:"Payung dan jas hujan dipakai saat hujan — petunjuk dari barang yang dibawanya."},
+{lv:"C5",vis:"🤔",q:"Which sentence is an OPINION?",
+ o:["The sun is hot.","Dogs have four legs.","Nasi goreng is the most delicious food.","Water is wet."],a:2,
+ e:"Opini adalah perasaan pribadi yang bisa berbeda antar orang. 'Paling enak' belum tentu sama untuk semua orang."},
+{lv:"C4",vis:"🎁",q:"Dina opens her birthday gift. She smiles and claps her hands. How does Dina feel?",
+ o:["Sad","Happy","Angry","Afraid"],a:1,
+ e:"Senyum dan bertepuk tangan adalah tanda perasaan senang (happy)."},
+{lv:"C5",vis:"🐕",q:"Every morning, Max wakes up early. He runs in the garden and chases butterflies. When he is tired, he sleeps under the big tree.\nWhat is the best title for the text?",
+ o:["Max's Morning in the Garden","A Trip to the Market","My New Shoes","The Rainy Night"],a:0,
+ e:"Judul terbaik harus menceritakan isi teks: Max bangun pagi, berlari, dan mengejar kupu-kupu di taman."},
+{lv:"C5",vis:"🚦",q:"Which is the SAFE way to cross the street?",
+ o:["Run very fast.","Close your eyes.","Hold an adult's hand and look left and right.","Play with friends in the middle of the road."],a:2,
+ e:"Menyeberang dengan aman: pegang tangan orang dewasa dan lihat kiri-kanan dulu."},
+{lv:"C5",vis:"💬",q:"Budi : \"May I borrow your pencil, please?\"\nSinta : \"_____\"",
+ o:["Sure, here you are.","I am seven years old.","It is blue.","Good night."],a:0,
+ e:"Permintaan izin (May I...) dijawab dengan tawaran sopan: 'Sure, here you are.'"},
+{lv:"C4",vis:"🧊",q:"If you leave a piece of ice in the hot sun, it will _____.",
+ o:["freeze","melt","fly","grow"],a:1,
+ e:"Es mencair (melt) ketika panas — perubahan benda akibat suhu."},
+{lv:"C4",vis:"🍎",q:"Which one is DIFFERENT from the others?",
+ o:["Apple","Banana","Mango","Carrot"],a:3,
+ e:"Apple, banana, dan mango adalah buah. Carrot (wortel) adalah sayuran."},
+{lv:"C4",vis:"🗓️",q:"Look at the timetable.\nSUBJECT | TIME\nEnglish | 07.00 – 07.40\nMathematics | 07.40 – 08.20\nArt | 08.20 – 09.00\nWhat subject are the students taking at 07.50?",
+ o:["English","Mathematics","Art","Music"],a:1,
+ e:"07.50 berada di rentang 07.40 – 08.20, yaitu waktu pelajaran Mathematics."},
+{lv:"C4",vis:"🔤",q:"How many words are in this sentence?\n\"My little sister likes to read books.\"",
+ o:["5","6","7","8"],a:2,
+ e:"My – little – sister – likes – to – read – books = 7 kata."},
+{lv:"C5",vis:"✏️",q:"Which sentence is written correctly?",
+ o:["She go to school by bus.","She goes to school by bus.","She going to school by bus.","She goed to school by bus."],a:1,
+ e:"Subjek 'she' (tunggal orang ketiga) harus diikuti kata kerja ber-+s: goes."},
+{lv:"C6",vis:"🧩",q:"Which is the correct order of the words?\nlike / I / to / dance",
+ o:["I to dance like.","Like I to dance.","Dance like I to.","I like to dance."],a:3,
+ e:"Urutan kalimat Inggris: subjek (I) → kata kerja (like) → objek (to dance)."},
+{lv:"C5",vis:"🕒",q:"I have a face and two hands, but I have no arms or legs. What am I?",
+ o:["A table","A clock","A cat","A ball"],a:1,
+ e:"'Face' dan 'hands' di sini adalah arti kiasan: jam punya angka (muka) dan jarum (tangan)."},
+{lv:"C4",vis:"🥛",q:"Andi drinks milk every morning. Budi drinks soda only on Sundays. Which sentence is TRUE?",
+ o:["Budi drinks soda more often than Andi drinks milk.","Andi drinks milk more often than Budi drinks soda.","Andi and Budi drink the same.","Budi never drinks soda."],a:1,
+ e:"Setiap hari (every morning) lebih sering daripada hanya hari Minggu (only on Sundays)."},
+{lv:"C4",vis:"🔊",q:"Which sentence is the OPPOSITE of \"The room is very noisy.\"?",
+ o:["The room is very big.","The room is quiet.","The room is clean.","The room is cold."],a:1,
+ e:"Noisy (berisik) berlawanan dengan quiet (tenang)."},
+{lv:"C5",vis:"🏊",q:"Lina packs her swimsuit, a towel, and goggles in her bag. Where is Lina probably going?",
+ o:["To the swimming pool","To the library","To the bakery","To the classroom"],a:0,
+ e:"Baju renang, handuk, dan kacamata renang adalah perlengkapan berenang."},
+{lv:"C5",vis:"🤲",q:"Which is the POLITE way to ask for help?",
+ o:["Help me now!","Give me your help.","Could you please help me?","You must help me."],a:2,
+ e:"'Could you please...' adalah bentuk permintaan yang sopan."},
+{lv:"C6",vis:"🗑️",q:"Tono finishes his snack. He wants to throw the candy wrapper. What should he do?",
+ o:["Throw it on the floor.","Hide it under his bed.","Put it in the trash bin.","Leave it on the desk."],a:2,
+ e:"Sampah harus dibuang ke tempat sampah (trash bin) agar lingkungan bersih."},
+{lv:"C4",vis:"🍅",q:"It is red and round. People often put it in a salad. What is it?",
+ o:["A banana","A tomato","A pencil","A shoe"],a:1,
+ e:"Merah, bulat, dan masuk salad = tomat (tomato)."},
+{lv:"C4",vis:"📚",q:"You can borrow books here, and you must be quiet. Where is this place?",
+ o:["A market","A library","A playground","A kitchen"],a:1,
+ e:"Meminjam buku dan harus tenang = perpustakaan (library)."},
+{lv:"C5",vis:"⚽",q:"Sam puts on his shoes and takes his ball. He waves to his mother and walks out the door. What will Sam probably do next?",
+ o:["Sleep in his bed.","Play ball outside.","Eat his dinner.","Do his homework."],a:1,
+ e:"Sepatu + bola + keluar rumah → kemungkinan besar ia akan bermain bola di luar."},
+{lv:"C4",vis:"🐘",q:"An elephant, a cat, and a rat stand in a line. Which sentence is TRUE?",
+ o:["The rat is bigger than the cat.","The cat is bigger than the elephant.","The elephant is bigger than both.","They are all the same size."],a:2,
+ e:"Gajah adalah hewan terbesar di antara ketiganya, lebih besar dari kucing dan tikus."},
+{lv:"C4",vis:"😴",q:"The baby is _____ because she has not slept all night.",
+ o:["sleepy","thirsty","dirty","loud"],a:0,
+ e:"Karena tidak tidur semalaman, dia mengantuk (sleepy) — sebab akibat dari teks."},
+{lv:"C4",vis:"👩‍🏫",q:"The teacher says: \"Open your book. Read page ten. Underline five new words.\"\nWhat must the students do FIRST?",
+ o:["Underline five new words.","Read page ten.","Close the book.","Open the book."],a:3,
+ e:"Kata petunjuk FIRST (pertama) = langkah awal dalam urutan: buka buku dulu."},
+{lv:"C4",vis:"📊",q:"Look at the data.\nFAVOURITE TOYS, CLASS 2A\nBall : 10 children\nDoll : 5 children\nBook : 8 children\nWhich statement is TRUE?",
+ o:["More children like dolls than books.","More children like balls than books.","All toys are liked by the same number.","Nobody likes books."],a:1,
+ e:"Ball (10) lebih banyak daripada Book (8), jadi 'more children like balls than books' benar."},
+{lv:"C5",vis:"💡",q:"Which sentence gives a REASON?",
+ o:["Budi stays at home.","Budi stays at home because he is sick.","Budi is at home.","Budi's home is big."],a:1,
+ e:"Kata 'because' menunjukkan sebab/alsan: ia di rumah KARENA sakit."}
+];
+
+const LVNAME={C4:"🔍 Analisis (C4)",C5:"⭐ Evaluasi (C5)",C6:"🛠️ Kreasi (C6)"};
+const $=id=>document.getElementById(id);
+let i=0, ans=new Array(DATA.length).fill(-1);
+
+$("go").onclick=()=>{
+  document.body.dataset.name=$("nm").value.trim();
+  $("start").classList.add("hide"); $("quiz").classList.remove("hide");
+  show();
+};
+function show(){
+  const d=DATA[i];
+  $("cnt").textContent=`Soal ${i+1} / ${DATA.length}`;
+  $("lv").textContent=LVNAME[d.lv];
+  $("fill").style.width=(i/DATA.length*100)+"%";
+  $("vis").textContent=d.vis;
+  $("qtext").textContent=d.q;
+  const sub=$("qsub");
+  // baris tabel/blok teks ikut di qtext (pakai \n), sub dipakai opsional
+  sub.classList.add("hide");
+  const box=$("opts"); box.innerHTML="";
+  d.o.forEach((t,k)=>{
+    const b=document.createElement("button");
+    b.className="opt"+(ans[i]===k?" sel":"");
+    b.innerHTML=`<span class="k">${"ABCD"[k]}.</span> ${esc(t)}`;
+    b.disabled=ans[i]>-1;
+    b.onclick=()=>{ans[i]=k;[...box.children].forEach((c,j)=>c.classList.toggle("sel",j===k));
+      box.querySelectorAll(".opt").forEach(c=>c.disabled=true);
+      $("next").disabled=false; $("fill").style.width=((i+1)/DATA.length*100)+"%";};
+    box.appendChild(b);
+  });
+  $("next").disabled=ans[i]===-1;
+  $("next").textContent = i===DATA.length-1 ? "🏁 Selesai & Lihat Nilai" : "Soal Berikutnya ➜";
+}
+$("next").onclick=()=>{ if(i<DATA.length-1){i++;show();} else finish(); };
+$("quit").onclick=finish;
+$("again").onclick=()=>{i=0;ans.fill(-1);$("res").classList.add("hide");
+  $("quiz").classList.remove("hide");show();};
+$("printBtn").onclick=()=>window.print();
+
+function finish(){
+  const sc=ans.reduce((n,v,k)=>n+(v===DATA[k].a?1:0),0);
+  const p=Math.round(sc/DATA.length*100);
+  $("quiz").classList.add("hide"); $("res").classList.remove("hide");
+  const nm=document.body.dataset.name;
+  $("who").textContent=nm?`🏅 Hasil untuk ${nm}`:"🏅 Hasil Belajarmu";
+  $("sc").textContent=sc; $("circ").style.setProperty("--p",p);
+  let bdg,msg;
+  if(p>=90){bdg="🏆 English Champion!";msg="Luar biasa! Kamu luar biasa jago Bahasa Inggris dan berpikir kritis. Pertahankan!";}
+  else if(p>=75){bdg="⭐ Great Job!";msg="Kerja bagus! Hampir semua soal benar. Pelajari lagi soal yang salah ya.";}
+  else if(p>=60){bdg="👍 Good Try!";msg="Bagus! Terus berlatih membaca teks dengan teliti, kamu pasti bisa lebih baik.";}
+  else{bdg="💪 Keep Practicing!";msg="Jangan menyerah! Baca lagi pembahasan tiap soal, lalu coba sekali lagi.";}
+  $("bdg").textContent=bdg; $("msg").textContent=msg;
+  const rb=$("revbox"); rb.innerHTML="<h2 style='color:var(--primary)'>📖 Pembahasan</h2>";
+  DATA.forEach((d,k)=>{
+    const ok=ans[k]===d.a;
+    const you=ans[k]>-1?"ABCD"[ans[k]]+"> "+esc(d.o[ans[k]]):"Tidak dijawab";
+    rb.insertAdjacentHTML("beforeend",
+     `<div class="rev">
+        <span class="st ${ok?'good':'wrong'}">${ok?'✔ Benar':'✘ Salah'} · Soal ${k+1} · ${LVNAME[d.lv]}</span>
+        <div class="qq">${esc(d.q)}</div>
+        <div class="ans">Jawabanmu: ${you}<br>Jawaban benar: <b>${"ABCD"[d.a]}. ${esc(d.o[d.a])}</b></div>
+        <div class="exp">💡 ${esc(d.e)}</div>
+      </div>`);
+  });
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+</script>
+</body>
+</html>
