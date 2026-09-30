@@ -68,6 +68,9 @@
   .rev .ans{line-height:1.7}
   .rev .exp{background:#fffbeb;border-left:4px solid var(--accent);
     padding:8px 10px;margin-top:8px;border-radius:0 8px 8px 0;font-size:.92rem}
+  .hrow{display:flex;align-items:center;gap:8px;background:#f8fafc;border:2px solid #ede9fe;
+    border-radius:12px;padding:9px 13px;margin-top:8px;font-size:.98rem}
+  .hdate{margin-left:auto;color:var(--muted);font-size:.82rem}
   .hide{display:none}
   footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:18px}
   @media print{
@@ -99,6 +102,11 @@
     <label class="small" for="nm">Namamu (opsional, tampil di hasil) ✏️</label>
     <input class="name" id="nm" type="text" maxlength="30" placeholder="Contoh: Aisyah">
     <button class="btn" id="go">🚀 Mulai Kerjakan!</button>
+    <div id="histbox" class="hide">
+      <h2 style="color:var(--primary);margin-top:20px;font-size:1.1rem">📜 Riwayat Skor</h2>
+      <div id="hist"></div>
+      <button class="btn secondary" id="clearHist" style="font-size:.9rem;padding:10px">🗑️ Hapus Riwayat</button>
+    </div>
   </section>
 
   <!-- SOAL -->
@@ -127,6 +135,7 @@
       </div>
       <div class="badge" id="bdg"></div>
       <p id="msg" style="margin-top:8px;line-height:1.7"></p>
+      <p id="saved" class="hide" style="color:var(--ok);font-weight:bold;margin-top:6px">✅ Skor tersimpan di riwayat (perangkat ini)</p>
       <button class="btn" id="again">🔁 Kerjakan Ulang</button>
       <button class="btn secondary noprint" id="printBtn">🖨️ Cetak Pembahasan</button>
     </div>
@@ -235,6 +244,23 @@ const LVNAME={C4:"🔍 Analisis (C4)",C5:"⭐ Evaluasi (C5)",C6:"🛠️ Kreasi 
 const $=id=>document.getElementById(id);
 let i=0, ans=new Array(DATA.length).fill(-1);
 
+// Simpan skor: localStorage per perangkat (ponytail: tanpa backend — tambah server/API kalau guru perlu lihat skor semua siswa)
+const HKEY="hots_scores_v1";
+const getH=()=>{try{return JSON.parse(localStorage.getItem(HKEY))||[]}catch(e){return[]}};
+const setH=h=>{try{localStorage.setItem(HKEY,JSON.stringify(h))}catch(e){}};
+const medal=s=>s>=27?"🏆":s>=21?"⭐":s>=15?"👍":"💪";
+function renderHist(){
+  const h=getH();
+  $("histbox").classList.toggle("hide",!h.length);
+  $("hist").innerHTML=h.map(r=>
+    `<div class="hrow">${medal(r.s)} <b>${esc(r.n||"Anonim")}</b> — <b>${r.s}/30</b><span class="hdate">${r.d}</span></div>`).join("");
+}
+function pushScore(name,s){
+  const h=getH();
+  h.unshift({n:name||"Anonim",s:s,d:new Date().toLocaleDateString("id-ID",{day:"2-digit",month:"short",year:"numeric"})});
+  setH(h.slice(0,20)); renderHist();
+}
+
 $("go").onclick=()=>{
   document.body.dataset.name=$("nm").value.trim();
   $("start").classList.add("hide"); $("quiz").classList.remove("hide");
@@ -283,6 +309,7 @@ function finish(){
   else if(p>=60){bdg="👍 Good Try!";msg="Bagus! Terus berlatih membaca teks dengan teliti, kamu pasti bisa lebih baik.";}
   else{bdg="💪 Keep Practicing!";msg="Jangan menyerah! Baca lagi pembahasan tiap soal, lalu coba sekali lagi.";}
   $("bdg").textContent=bdg; $("msg").textContent=msg;
+  pushScore(nm,sc); $("saved").classList.remove("hide");
   const rb=$("revbox"); rb.innerHTML="<h2 style='color:var(--primary)'>📖 Pembahasan</h2>";
   DATA.forEach((d,k)=>{
     const ok=ans[k]===d.a;
@@ -298,6 +325,8 @@ function finish(){
   window.scrollTo({top:0,behavior:"smooth"});
 }
 function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+$("clearHist").onclick=()=>{setH([]);renderHist();};
+renderHist();
 </script>
 </body>
 </html>
